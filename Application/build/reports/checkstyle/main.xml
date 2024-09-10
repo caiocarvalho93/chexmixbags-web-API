@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<checkstyle version="8.17">
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Application.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/ApplicationStartUpListener.java">
+<error line="4" severity="error" message="&apos;org.springframework.context.event.ContextRefreshedEvent&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="13" severity="error" message="Line is longer than 120 characters (found 123)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="20" severity="error" message="Line is longer than 120 characters (found 131)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/AsynchronousService.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Exception/ChexMixExpiredException.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Exception/ChexMixNotAvailableException.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Exception/ChexMixQuantityOutOfRangeException.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Exception/ChexMixServiceException.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Exception/ChexMixValidationException.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/Scheduler.java">
+<error line="9" severity="error" message="Comment has incorrect indentation level 3, expected is 4, indentation should be the same level as line 14." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="17" severity="error" message="&apos;method def modifier&apos; has incorrect indentation level 3, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="17" severity="error" message="Don&apos;t use trailing comments." source="com.puppycrawl.tools.checkstyle.checks.TrailingCommentCheck"/>
+<error line="19" severity="error" message="&apos;method def&apos; child has incorrect indentation level 7, expected level should be 8." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+<error line="20" severity="error" message="&apos;method def rcurly&apos; has incorrect indentation level 3, expected level should be 4." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/config/CacheConfig.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="8" severity="error" message="Wrong lexicographical order for &apos;org.springframework.cache.annotation.EnableCaching&apos; import. Should be before &apos;org.springframework.context.annotation.Configuration&apos;." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="18" severity="error" message="Line is longer than 120 characters (found 122)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="32" severity="error" message="Comment has incorrect indentation level 0, expected is 4, indentation should be the same level as line 35." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="60" severity="error" message="&apos;method def&apos; child has incorrect indentation level 7, expected level should be 8." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/config/DynamoDbConfig.java">
+<error line="17" severity="error" message="Line is longer than 120 characters (found 144)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/config/ExecutorServiceConfig.java">
+<error line="8" column="8" severity="error" message="Unused import - java.util.concurrent.ConcurrentLinkedQueue." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="13" severity="error" message="Line is longer than 120 characters (found 133)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/config/ModelMapperConfig.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/BaseController.java">
+<error line="3" column="8" severity="error" message="Unused import - org.springframework.http.HttpStatus." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/ChexMixBagController.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="7" severity="error" message="&apos;org.modelmapper.ModelMapper&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+<error line="10" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - org.springframework.web.bind.annotation.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+<error line="25" column="68" severity="error" message="&apos;,&apos; is not followed by whitespace." source="com.puppycrawl.tools.checkstyle.checks.whitespace.WhitespaceAfterCheck"/>
+<error line="43" severity="error" message="Line is longer than 120 characters (found 126)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="49" severity="error" message="Line is longer than 120 characters (found 123)." source="com.puppycrawl.tools.checkstyle.checks.sizes.LineLengthCheck"/>
+<error line="60" severity="error" message="Comment has incorrect indentation level 6, expected is 7, indentation should be the same level as line 62." source="com.puppycrawl.tools.checkstyle.checks.indentation.CommentsIndentationCheck"/>
+<error line="62" severity="error" message="&apos;method def&apos; child has incorrect indentation level 7, expected level should be 8." source="com.puppycrawl.tools.checkstyle.checks.indentation.IndentationCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/ExampleController.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/model/ChexMixBagCreateRequest.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/model/ChexMixBagResponse.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/model/ExampleCreateRequest.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="1" severity="error" message="Missing package declaration." source="com.puppycrawl.tools.checkstyle.checks.coding.PackageDeclarationCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/model/ExampleResponse.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/controller/model/NutritionalInfoRequestResponse.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/repositories/ChexMixBagRepository.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/repositories/model/ChexMixBag.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="3" severity="error" message="Using the &apos;.*&apos; form of import should be avoided - com.amazonaws.services.dynamodbv2.datamodeling.*." source="com.puppycrawl.tools.checkstyle.checks.imports.AvoidStarImportCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/repositories/model/ExampleRecord.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/repositories/model/NutritionalInfo.java">
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/service/ChexMixBagService.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+<error line="3" column="8" severity="error" message="Unused import - com.kenzie.appserver.controller.model.ChexMixBagCreateRequest." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+<error line="9" severity="error" message="&apos;org.springframework.beans.factory.annotation.Autowired&apos; should be separated from previous import group by one line." source="com.puppycrawl.tools.checkstyle.checks.imports.CustomImportOrderCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/service/ExampleService.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/service/model/ChexMixBagDTO.java">
+<error line="3" column="8" severity="error" message="Unused import - com.kenzie.appserver.repositories.model.NutritionalInfo." source="com.puppycrawl.tools.checkstyle.checks.imports.UnusedImportsCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/service/model/Example.java">
+<error line="1" severity="error" message="File does not end with a newline." source="com.puppycrawl.tools.checkstyle.checks.NewlineAtEndOfFileCheck"/>
+</file>
+<file name="/Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/Application/src/main/java/com/kenzie/appserver/service/model/NutritionalInfoDTO.java">
+</file>
+</checkstyle>

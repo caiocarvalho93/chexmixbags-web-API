@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.kenzie.appserver.controller.ChexMixBagDTOControllerTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-01-09T03:01:54" hostname="Caios-MacBook-Air.local" time="0.569">
+  <properties/>
+  <testcase name="createExample_CreateSuccessful()" classname="com.kenzie.appserver.controller.ChexMixBagDTOControllerTest" time="0.556"/>
+  <testcase name="getById_Exists()" classname="com.kenzie.appserver.controller.ChexMixBagDTOControllerTest" time="0.009"/>
+  <system-out><![CDATA[2024-01-08 22:01:28  INFO  AbstractContextLoader - Could not detect default resource locations for test class [com.kenzie.appserver.controller.ChexMixBagDTOControllerTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2024-01-08 22:01:28  INFO  AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.kenzie.appserver.controller.ChexMixBagDTOControllerTest]: ChexMixBagDTOControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-08 22:01:28  INFO  SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.kenzie.appserver.Application for test class com.kenzie.appserver.controller.ChexMixBagDTOControllerTest
+2024-01-08 22:01:29  INFO  SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2024-01-08 22:01:29  INFO  SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2815baf4, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@7e1bfe55, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@6120afee, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@31157203, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@34d2bccf, org.springframework.test.context.support.DirtiesContextTestExecutionListener@159a1556, org.springframework.test.context.transaction.TransactionalTestExecutionListener@712197d4, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@6bbe6699, org.springframework.test.context.event.EventPublishingTestExecutionListener@4aab8be5, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@f5e0743, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@723cae4b, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@6aae943b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7cccde28, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@357aaed, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@140e023a]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v2.6.3)
+
+2024-01-08 22:01:30  INFO  Version - HV000001: Hibernate Validator 6.0.9.Final
+2024-01-08 22:01:31  INFO  DockerClientProviderStrategy - Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2024-01-08 22:01:31  INFO  DockerClientProviderStrategy - Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2024-01-08 22:01:31  INFO  DockerClientFactory - Docker host IP address is localhost
+2024-01-08 22:01:31  INFO  DockerClientFactory - Connected to docker: 
+  Server Version: 24.0.6
+  API Version: 1.43
+  Operating System: Docker Desktop
+  Total Memory: 7844 MB
+2024-01-08 22:01:31  INFO  ImageNameSubstitutor - Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2024-01-08 22:01:32  INFO  RegistryAuthLocator - Credential helper/store (docker-credential-desktop) does not have credentials for index.docker.io
+2024-01-08 22:01:33  INFO  DockerClientFactory - Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2024-01-08 22:01:33  INFO  DockerClientFactory - Checking the system...
+2024-01-08 22:01:33  INFO  DockerClientFactory - ✔︎ Docker server version should be at least 1.6.0
+2024-01-08 22:01:33  INFO  DockerClientFactory - ✔︎ Docker environment should have more than 2GB free disk space
+2024-01-08 22:01:33  INFO  ]]>&#x1f433;<![CDATA[ [amazon/dynamodb-local:latest] - Creating container for image: amazon/dynamodb-local:latest
+2024-01-08 22:01:33  INFO  ]]>&#x1f433;<![CDATA[ [amazon/dynamodb-local:latest] - Container amazon/dynamodb-local:latest is starting: 757710d8b78590bf8ddb4f2136e08db94fe5fd37386ad383d3915f4481871866
+2024-01-08 22:01:34  INFO  ]]>&#x1f433;<![CDATA[ [amazon/dynamodb-local:latest] - Container amazon/dynamodb-local:latest started in PT1.566961S
+2024-01-08 22:01:34  INFO  ChexMixBagDTOControllerTest - Starting ChexMixBagDTOControllerTest using Java 16.0.2 on Caios-MacBook-Air.local with PID 4170 (started by caifitness in /Users/caifitness/kenzie/ata-lbc-project-meazaberhe24/IntegrationTests)
+2024-01-08 22:01:34  INFO  ChexMixBagDTOControllerTest - The following profiles are active: test
+2024-01-08 22:01:36  INFO  RepositoryConfigurationDelegate - Bootstrapping Spring Data DynamoDB repositories in DEFAULT mode.
+2024-01-08 22:01:36  INFO  RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 191 ms. Found 1 DynamoDB repository interfaces.
+2024-01-08 22:01:46  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#3c6bcd35' of type [com.amazonaws.auth.EC2ContainerCredentialsProviderWrapper] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:46  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean '(inner bean)#6eb79d11' of type [com.amazonaws.auth.profile.ProfileCredentialsProvider] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:46  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'credentialsProvider' of type [org.springframework.cloud.aws.core.credentials.CredentialsProviderFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:46  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'credentialsProvider' of type [com.amazonaws.auth.AWSCredentialsProviderChain] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:46  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamoDbConfig' of type [com.kenzie.appserver.config.DynamoDbConfig$$EnhancerBySpringCGLIB$$25ec9669] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:46  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'amazonDynamoDB' of type [com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:47  INFO  PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'dynamoDB-DynamoDBMapperConfig' of type [com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapperConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2024-01-08 22:01:47  INFO  TomcatWebServer - Tomcat initialized with port(s): 0 (http)
+2024-01-08 22:01:48  INFO  ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 13008 ms
+2024-01-08 22:01:49  INFO  DynamoDBRepositoryFactory - Spring Data DynamoDB Version: 5.2.1 (2.2)
+2024-01-08 22:01:49  INFO  DynamoDBRepositoryFactory - Spring Data Version:          2.6.2
+2024-01-08 22:01:49  INFO  DynamoDBRepositoryFactory - AWS SDK Version:              1.11.1034
+2024-01-08 22:01:49  INFO  DynamoDBRepositoryFactory - Java Version:                 16.0.2 - OpenJDK 64-Bit Server VM 16.0.2+7
+2024-01-08 22:01:49  INFO  DynamoDBRepositoryFactory - Platform Details:             Mac OS X 12.5
+2024-01-08 22:01:49  WARN  DynamoDBRepositoryFactory - This Spring Data DynamoDB implementation might not be compatible with the available Spring Data classes on the classpath!
+NoDefClassFoundExceptions or similar might occur!
+2024-01-08 22:01:50  INFO  WelcomePageHandlerMapping - Adding welcome page: class path resource [static/index.html]
+2024-01-08 22:01:53  INFO  TestDispatcherServlet - Initializing Servlet ''
+2024-01-08 22:01:53  INFO  EndpointLinksResolver - Exposing 1 endpoint(s) beneath base path '/actuator'
+2024-01-08 22:01:53  INFO  TestDispatcherServlet - Completed initialization in 38 ms
+2024-01-08 22:01:54  INFO  TomcatWebServer - Tomcat started on port(s): 50832 (http) with context path ''
+2024-01-08 22:01:54  INFO  Entity2DynamoDBTableSynchronizer - Checking repository classes with DynamoDB tables ChexMixBagDTO for ContextRefreshedEvent
+Application started. Performing start-up tasks...
+2024-01-08 22:01:54  INFO  ChexMixBagDTOControllerTest - Started ChexMixBagDTOControllerTest in 24.762 seconds (JVM running for 28.773)
+]]></system-out>
+  <system-err><![CDATA[Jan 08, 2024 10:01:48 PM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-nio-auto-1"]
+Jan 08, 2024 10:01:48 PM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service [Tomcat]
+Jan 08, 2024 10:01:48 PM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet engine: [Apache Tomcat/9.0.56]
+Jan 08, 2024 10:01:48 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring embedded WebApplicationContext
+Jan 08, 2024 10:01:53 PM org.apache.catalina.core.ApplicationContext log
+INFO: Initializing Spring TestDispatcherServlet ''
+Jan 08, 2024 10:01:54 PM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-nio-auto-1"]
+]]></system-err>
+</testsuite>

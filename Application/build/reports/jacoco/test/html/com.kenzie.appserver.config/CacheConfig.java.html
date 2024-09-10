@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CacheConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.config</a> &gt; <span class="el_source">CacheConfig.java</span></div><h1>CacheConfig.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.config;
+
+import com.github.benmanes.caffeine.cache.Caffeine;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.caffeine.CaffeineCacheManager;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.cache.annotation.EnableCaching;
+import springfox.documentation.swagger2.mappers.ModelMapper;
+
+import java.util.concurrent.TimeUnit;
+
+@Configuration
+@EnableCaching
+<span class="nc" id="L15">public class CacheConfig {</span>
+
+    /**
+     * this class helps set up and configure a caching mechanism using the Caffeine cache library in a Spring application.
+     * Caching is used to optimize the performance of the application by storing and reusing frequently accessed data
+     **/
+
+    //goal is to make the program faster by saving and reusing important information that the program uses a lot
+    //we are using Caffeine cache, cache Manager
+
+    //set instructions for making a caching system using the Caffeine library
+
+    // Create a Cache here if needed
+
+//    @Bean
+//    public CacheStore myCache() {
+//        return new CacheStore(120, TimeUnit.SECONDS);
+//    }
+
+    // Define a CacheManager bean to manage caching
+    @Bean
+    public CacheManager cacheManager() {
+        // Create a CaffeineCacheManager instance
+<span class="nc" id="L38">        CaffeineCacheManager cacheManager = new CaffeineCacheManager();</span>
+
+        // Set the Caffeine cache configuration
+<span class="nc" id="L41">        cacheManager.setCaffeine(caffeineCacheBuilder());</span>
+<span class="nc" id="L42">        return cacheManager;</span>
+    }
+
+    // Configure the behavior of the Caffeine cache
+    Caffeine&lt;Object, Object&gt; caffeineCacheBuilder() {
+<span class="nc" id="L47">        return Caffeine.newBuilder()</span>
+                // Specify the expiration time after write (120 seconds in this case)
+<span class="nc" id="L49">                .expireAfterWrite(120, TimeUnit.SECONDS)</span>
+
+                // Set the maximum size of the cache (100 elements in this case)
+<span class="nc" id="L52">                .maximumSize(100)</span>
+
+                // Record cache statistics for monitoring purposes
+<span class="nc" id="L55">                .recordStats();</span>
+    }
+
+    @Bean
+    public ModelMapper modelMapper() {
+<span class="nc" id="L60">       return new ModelMapper();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChexMixBag.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.repositories.model</a> &gt; <span class="el_source">ChexMixBag.java</span></div><h1>ChexMixBag.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.repositories.model;
+
+import com.amazonaws.services.dynamodbv2.datamodeling.*;
+
+import java.util.Objects;
+
+@DynamoDBTable(tableName = &quot;ChexMixBagDTO&quot;)
+<span class="fc" id="L8">public class ChexMixBag {</span>
+
+    private String id;
+    private String type;
+    private int quantity;
+    private String batchNumber;
+    private String supplier;
+    private String expirationDate;
+    @DynamoDBTyped(DynamoDBMapperFieldModel.DynamoDBAttributeType.M)
+    private NutritionalInfo nutritionalInfo;
+
+    @DynamoDBAttribute(attributeName = &quot;NutritionalInfo&quot;)
+    public NutritionalInfo getNutritionalInfo() {
+<span class="fc" id="L21">        return nutritionalInfo;</span>
+    }
+
+    public void setNutritionalInfo(NutritionalInfo nutritionalInfo) {
+<span class="fc" id="L25">        this.nutritionalInfo = nutritionalInfo;</span>
+<span class="fc" id="L26">    }</span>
+
+    @DynamoDBAttribute(attributeName = &quot;ExpirationDate&quot;)
+    public String getExpirationDate() {
+<span class="fc" id="L30">        return expirationDate;</span>
+    }
+
+    public void setExpirationDate(String expirationDate) {
+<span class="fc" id="L34">        this.expirationDate = expirationDate;</span>
+<span class="fc" id="L35">    }</span>
+
+    @DynamoDBAttribute(attributeName = &quot;Supplier&quot;)
+    public String getSupplier() {
+<span class="fc" id="L39">        return supplier;</span>
+    }
+
+    public void setSupplier(String supplier) {
+<span class="fc" id="L43">        this.supplier = supplier;</span>
+<span class="fc" id="L44">    }</span>
+
+    @DynamoDBAttribute(attributeName = &quot;BatchNumber&quot;)
+    public String getBatchNumber() {
+<span class="fc" id="L48">        return batchNumber;</span>
+    }
+
+    public void setBatchNumber(String batchNumber) {
+<span class="fc" id="L52">        this.batchNumber = batchNumber;</span>
+<span class="fc" id="L53">    }</span>
+
+    @DynamoDBAttribute(attributeName = &quot;Quantity&quot;)
+    public int getQuantity() {
+<span class="fc" id="L57">        return quantity;</span>
+    }
+
+    public void setQuantity(int quantity) {
+<span class="fc" id="L61">        this.quantity = quantity;</span>
+<span class="fc" id="L62">    }</span>
+
+    @DynamoDBHashKey(attributeName = &quot;Id&quot;)
+    public String getId() {
+<span class="fc" id="L66">        return id;</span>
+    }
+
+    @DynamoDBAttribute(attributeName = &quot;Type&quot;)
+    public String getType() {
+<span class="fc" id="L71">        return type;</span>
+    }
+
+    public void setId(String id) {
+<span class="fc" id="L75">        this.id = id;</span>
+<span class="fc" id="L76">    }</span>
+
+    public void setType(String type) {
+<span class="fc" id="L79">        this.type = type;</span>
+<span class="fc" id="L80">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="nc bnc" id="L84" title="All 2 branches missed.">        if (this == o) {</span>
+<span class="nc" id="L85">            return true;</span>
+        }
+<span class="nc bnc" id="L87" title="All 4 branches missed.">        if (o == null || getClass() != o.getClass()) {</span>
+<span class="nc" id="L88">            return false;</span>
+        }
+<span class="nc" id="L90">        ChexMixBag chexMixBag = (ChexMixBag) o;</span>
+<span class="nc" id="L91">        return Objects.equals(id, chexMixBag.id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L96">        return Objects.hash(id);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>DynamoDbConfig.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.config</a> &gt; <span class="el_source">DynamoDbConfig.java</span></div><h1>DynamoDbConfig.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.config;
+
+import com.amazonaws.client.builder.AwsClientBuilder;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import org.socialsignin.spring.data.dynamodb.repository.config.EnableDynamoDBRepositories;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableDynamoDBRepositories(basePackages = &quot;com.kenzie.appserver.repositories&quot;)
+<span class="nc" id="L14">public class DynamoDbConfig {</span>
+
+    //this class is a Spring configuration class for DynamoDB/helps set up connections to Amazon DynamoDB/2 ways
+    //provides two beans for creating instances of AmazonDynamoDB,Allows the application to interact with DynamoDB, storing and retrieving data.
+    //1.conditional,allows you to override the DynamoDB endpoint if a specific property is set to &quot;true&quot;/custom
+    //2.creates a default instance without overriding the endpoint
+
+    //Other parts of the program can use these connections to read from or write to DynamoDB
+
+
+
+
+    //injects the DynamoDB override endpoint property
+    @Value(&quot;${dynamodb.override_endpoint}&quot;)
+    String dynamoOverrideEndpoint;
+
+    // Bean creation for AmazonDynamoDB conditionally based on the override endpoint property
+    @Bean
+    @ConditionalOnProperty(name = &quot;dynamodb.override_endpoint&quot;, havingValue = &quot;true&quot;)
+    public AmazonDynamoDB amazonDynamoDB(@Value(&quot;${dynamodb.endpoint}&quot;) String dynamoEndpoint) {
+<span class="nc" id="L34">        AwsClientBuilder.EndpointConfiguration endpointConfig = new</span>
+                AwsClientBuilder.EndpointConfiguration(dynamoEndpoint,
+                &quot;us-east-1&quot;);
+
+        // Build and return the AmazonDynamoDB instance
+<span class="nc" id="L39">        return AmazonDynamoDBClientBuilder</span>
+<span class="nc" id="L40">                .standard()</span>
+<span class="nc" id="L41">                .withEndpointConfiguration(endpointConfig)</span>
+<span class="nc" id="L42">                .build();</span>
+
+    }
+    // Bean creation for the default AmazonDynamoDB client
+    @Bean(name = &quot;amazonDynamoDB&quot;)
+    public AmazonDynamoDB defaultAmazonDynamoDb() {
+        // Build and return the default AmazonDynamoDB client
+<span class="nc" id="L49">        return AmazonDynamoDBClientBuilder.defaultClient();</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>

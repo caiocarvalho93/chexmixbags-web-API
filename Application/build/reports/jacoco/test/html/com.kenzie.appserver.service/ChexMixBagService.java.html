@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ChexMixBagService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Application</a> &gt; <a href="index.source.html" class="el_package">com.kenzie.appserver.service</a> &gt; <span class="el_source">ChexMixBagService.java</span></div><h1>ChexMixBagService.java</h1><pre class="source lang-java linenums">package com.kenzie.appserver.service;
+
+import com.kenzie.appserver.controller.model.ChexMixBagCreateRequest;
+import com.kenzie.appserver.repositories.ChexMixBagRepository;
+import com.kenzie.appserver.repositories.model.ChexMixBag;
+import com.kenzie.appserver.repositories.model.NutritionalInfo;
+import com.kenzie.appserver.service.model.ChexMixBagDTO;
+import com.kenzie.appserver.service.model.NutritionalInfoDTO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Service class for managing Chex Mix operations.
+ */
+@Service
+public class ChexMixBagService {
+
+    private ChexMixBagRepository chexMixBagRepository;
+
+    @Autowired
+<span class="fc" id="L24">    public ChexMixBagService(ChexMixBagRepository chexMixRepository) {</span>
+<span class="fc" id="L25">        this.chexMixBagRepository = chexMixRepository;</span>
+<span class="fc" id="L26">    }</span>
+
+    public ChexMixBagDTO findById(String id) {
+<span class="fc" id="L29">        ChexMixBagDTO chexMixBagDTOFromBackend = chexMixBagRepository</span>
+<span class="fc" id="L30">                .findById(id)</span>
+<span class="fc" id="L31">                .map(chexMixBagModel -&gt; {</span>
+<span class="fc" id="L32">                    ChexMixBagDTO chexMixBagDTO = new ChexMixBagDTO(chexMixBagModel.getId(), chexMixBagModel.getType());</span>
+<span class="fc" id="L33">                    chexMixBagDTO.setBatchNumber(chexMixBagModel.getBatchNumber());</span>
+<span class="fc" id="L34">                    chexMixBagDTO.setQuantity(chexMixBagModel.getQuantity());</span>
+<span class="fc" id="L35">                    chexMixBagDTO.setSupplier(chexMixBagModel.getSupplier());</span>
+<span class="fc" id="L36">                    chexMixBagDTO.setExpirationDate(chexMixBagModel.getExpirationDate());</span>
+<span class="fc" id="L37">                    NutritionalInfoDTO nutritionalInfoDTO = new NutritionalInfoDTO();</span>
+
+<span class="fc" id="L39">                    nutritionalInfoDTO.setCalories(chexMixBagModel.getNutritionalInfo().getCalories());</span>
+<span class="fc" id="L40">                    nutritionalInfoDTO.setProtein(chexMixBagModel.getNutritionalInfo().getProtein());</span>
+<span class="fc" id="L41">                    nutritionalInfoDTO.setSugars(chexMixBagModel.getNutritionalInfo().getSugars());</span>
+<span class="fc" id="L42">                    nutritionalInfoDTO.setTotalFat(chexMixBagModel.getNutritionalInfo().getTotalFat());</span>
+
+
+<span class="fc" id="L45">                    chexMixBagDTO.setNutritionalInfo(nutritionalInfoDTO);</span>
+
+
+<span class="fc" id="L48">                    return chexMixBagDTO;</span>
+                })
+<span class="fc" id="L50">                .orElse(null);</span>
+
+<span class="fc" id="L52">        return chexMixBagDTOFromBackend;</span>
+    }
+
+
+    public ChexMixBagDTO addNewChexMixBag(ChexMixBagDTO chexMixBagDTO) {
+<span class="nc" id="L57">        ChexMixBag chexMixBag = new ChexMixBag();</span>
+<span class="nc" id="L58">        chexMixBag.setId(chexMixBagDTO.getId());</span>
+<span class="nc" id="L59">        chexMixBag.setType(chexMixBagDTO.getType());</span>
+<span class="nc" id="L60">        chexMixBag.setBatchNumber(chexMixBagDTO.getBatchNumber());</span>
+<span class="nc" id="L61">        chexMixBag.setQuantity(chexMixBagDTO.getQuantity());</span>
+<span class="nc" id="L62">        chexMixBag.setSupplier(chexMixBagDTO.getSupplier());</span>
+<span class="nc" id="L63">        chexMixBag.setExpirationDate(chexMixBagDTO.getExpirationDate());</span>
+
+<span class="nc" id="L65">        NutritionalInfoDTO nutritionalInfoDTO = chexMixBagDTO.getNutritionalInfo();</span>
+<span class="nc" id="L66">        NutritionalInfo nutritionalInfo = new NutritionalInfo();</span>
+<span class="nc" id="L67">        nutritionalInfo.setCalories(nutritionalInfoDTO.getCalories());</span>
+<span class="nc" id="L68">        nutritionalInfo.setProtein(nutritionalInfoDTO.getProtein());</span>
+<span class="nc" id="L69">        nutritionalInfo.setSugars(nutritionalInfoDTO.getSugars());</span>
+<span class="nc" id="L70">        nutritionalInfo.setTotalFat(nutritionalInfoDTO.getTotalFat());</span>
+
+<span class="nc" id="L72">        chexMixBag.setNutritionalInfo(nutritionalInfo);</span>
+
+<span class="nc" id="L74">        chexMixBagRepository.save(chexMixBag);</span>
+<span class="nc" id="L75">        chexMixBagDTO.setId(chexMixBag.getId());</span>
+<span class="nc" id="L76">        return chexMixBagDTO;</span>
+    }
+
+
+    /**
+     * Removes expired Chex Mix from the inventory.
+     *
+     * @return The removed expired Chex Mix.
+     */
+    public ChexMixBag removeExpiredChexMix() {
+        // Implementation for removing expired Chex Mix
+        // You can use chexMixRepository to interact with the database
+        // Example: chexMixRepository.deleteByExpirationDateBefore(LocalDate.now());
+<span class="nc" id="L89">        return null;</span>
+    }
+
+    /**
+     * Retrieves the available Chex Mix from the inventory.
+     *
+     * @return List of available Chex Mix.
+     */
+    public List&lt;ChexMixBag&gt; getAvailableChexMix() {
+        // Implementation for retrieving available Chex Mix
+        // You can use chexMixRepository to interact with the database
+        // Example: return chexMixRepository.findAll();
+<span class="nc" id="L101">        return null;</span>
+    }
+
+    /**
+     * Tracks the quantity of each type of Chex Mix in the inventory.
+     *
+     * @return Map with Chex Mix type as key and quantity as value.
+     */
+    public Map&lt;String, Integer&gt; trackChexMixQuantity() {
+        // Implementation for tracking Chex Mix quantity
+        // You can use chexMixRepository to interact with the database
+        // Example: return chexMixRepository.getQuantityByType();
+<span class="nc" id="L113">        return null;</span>
+    }
+
+    /**
+     * Removes Chex Mix from the inventory by batch number.
+     *
+     * @param batchNumber The batch number of the Chex Mix to be removed.
+     */
+    public void removeChexMixByBatchNumber(String batchNumber) {
+        // Implementation for removing Chex Mix by batch number
+        // You can use chexMixRepository to interact with the database
+        // Example: chexMixRepository.deleteByBatchNumber(batchNumber);
+<span class="nc" id="L125">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
